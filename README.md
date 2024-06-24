@@ -1,18 +1,20 @@
- If you're using Arch Linux with GNOME and GDM on Xorg, and you don't have a 125% scaling option in your GNOME settings, you can achieve it through the following methods:
+To set the display scaling to 125% on Arch Linux with GNOME using the command line, you can use the `gsettings` command. Here's how to do it:
 
-1. **Using Wayland (Recommended)**:
-   - Run the following command in your terminal:
-     ```
-     gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
-     ```
-   - Restart your session. After this, you should have the 125% scaling option available. Keep in mind that XWayland applications might appear a bit blurry when scaled up¹.
+1. Open a terminal.
 
-2. **Using Xorg**:
-   - Install the `mutter-x11-scaling` package from the AUR repository.
-   - Enable fractional scaling with the following command:
-     ```
-     gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
-     ```
-   - Open GNOME Settings > Devices > Displays and set the desired scale²³.
+2. Run the following command:
 
-Remember to choose the method that best suits your needs and system configuration. Happy scaling! 😊
+```
+gsettings set org.gnome.desktop.interface scaling-factor 125
+```
+
+3. Log out and log back in for the changes to take effect.
+
+If this doesn't work, you might need to use a more precise fractional scaling value. GNOME supports fractional scaling through a different setting. Try this command instead:
+
+```
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
+```
+
+After running these commands, log out and log back in.
