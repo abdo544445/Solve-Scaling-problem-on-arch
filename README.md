@@ -12,6 +12,7 @@ gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
 After executing these commands, log out and log back in.
 if you want to set it to work on 200% or another percentage, just divided it on 100 to get the numbers in formula 1.00. 
 but be careful that lots of x11 apps  won't work perfectly on the scales that are not multiples of 6.25% or another formula 0.625,   you can put the scale from the next: 
+```
 0.0625 for 6.25% scaling
 0.1250 for 12.50% scaling
 0.1875 for 18.75% scaling
@@ -76,3 +77,4 @@ but be careful that lots of x11 apps  won't work perfectly on the scales that ar
 3.8750 for 387.50% scaling
 3.9375 for 393.75% scaling
 4.0000 for 400.00% scaling
+```
